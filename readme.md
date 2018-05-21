@@ -1,29 +1,29 @@
-## Endpoints
-Accepts an integer, converts it to a roman numeral, stores it in the database and returns the response.
-Lists all of the recently converted integers.
-Lists the top 10 converted integers.
+# Endpoints
+- Accepts an integer, converts it to a roman numeral, stores it in the database and returns the response.
+- Lists all of the recently converted integers.
+- Lists the top 10 converted integers.
 
-##Routes
-//Return roman number and save it in database or update the record
-Route::get('number/{conv_number}', 'NumberController@convert');
+## Routes
+##### Return roman number and save it in database or update the record
+- Route::get('number/{conv_number}', 'NumberController@convert');
 
-//List (recently) converted integers 
-Route::get('numbers', 'NumberController@index');
+##### List (recently) converted integers 
+- Route::get('numbers', 'NumberController@index');
 
-//List top 10 converted integers
-Route::get('numbers/top10', 'NumberController@showTop10');
+##### List top 10 converted integers
+- Route::get('numbers/top10', 'NumberController@showTop10');
 
-##Exemples
-http://applicationName.test/api/number/10 =>X
-http://applicationName.test/api/number/1000 => M
-http://applicationName.test/api/number/3549 => MMMDXLIX
-http://applicationName.test/api/number/1 => I
-http://applicationName.test/api/number/3999 =>MMMCMXCIX
+## Exemples
+##### http://applicationName.test/api/number/10 =>X
+##### http://applicationName.test/api/number/1000 => M
+##### http://applicationName.test/api/number/3549 => MMMDXLIX
+##### http://applicationName.test/api/number/1 => I
+##### http://applicationName.test/api/number/3999 =>MMMCMXCIX
 
-http://applicationName.test/api/numbers
+##### http://applicationName.test/api/numbers
 
 =>
-
+'''
 {
     "data": [
         {
@@ -103,11 +103,11 @@ http://applicationName.test/api/numbers
         }
     ]
 }
+'''
 
 
-
-http://applicationName.test/api/numbers/top10
-
+##### http://applicationName.test/api/numbers/top10
+'''
 {
     "data": [
         {
@@ -161,3 +161,5 @@ http://applicationName.test/api/numbers/top10
             "conv_times": 3
         }
     ]
+
+    '''
